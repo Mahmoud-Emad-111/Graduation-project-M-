@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\Storage;
+
 trait SaveImage
 {
 
@@ -11,6 +13,12 @@ trait SaveImage
     {
         $full=$image->store($name);
         return $full;
+    }
+
+    public function fileRemove($file){
+        if (Storage::exists($file)) {
+            Storage::delete($file);
+        }
     }
 
     // public function Delete($model,int $id){
