@@ -16,4 +16,7 @@ class LabCategory extends Model
         'created_at',
     ];
 
+    public function Lab(){
+        return $this->hasMany(Lab::class);
+    }
 }

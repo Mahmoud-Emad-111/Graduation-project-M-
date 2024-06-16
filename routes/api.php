@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DoctorCategoryController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\LabCategoryController;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,12 +32,28 @@ Route::controller(UserController::class)->prefix('/Auth/')->group(function () {
 
 });
 
+Route::controller(DoctorCategoryController::class)->prefix('/Doctors_Categories/')->group(function () {
+    Route::get('Get','Get_All_Categories');
+});
 
 
+Route::controller(DoctorController::class)->prefix('/Doctors/')->group(function () {
+    Route::get('Get','Get');
+    Route::post('Register', 'Register');
+
+    Route::post('Show','Show');
+});
 
 
+Route::controller(LabCategoryController::class)->prefix('/Labs_Categories/')->group(function () {
+    Route::get('Get','Get_All_Categories');
+});
 
+Route::controller(LabController::class)->prefix('/Lab/')->group(function () {
+    Route::get('Get','Get');
+    Route::post('Show','Show');
 
+});
 
 
 

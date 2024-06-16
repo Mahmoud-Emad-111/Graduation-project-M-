@@ -2,12 +2,11 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Doctor_Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
 
-class DoctorResources extends JsonResource
+class LabResources extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,10 +17,10 @@ class DoctorResources extends JsonResource
     {
         return [
             'name'=>$this->name,
+            'title'=>$this->title,
             'image'=>asset(Storage::url($this->image)),
+            'phone'=>$this->phone,
             'address'=>$this->address,
-            'fees'=>$this->fees,
-            'doctor_category'=>Doctor_Category::find($this->doctor_category_id)->Title,
         ];
     }
 }

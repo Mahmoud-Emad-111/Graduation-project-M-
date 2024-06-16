@@ -4,7 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Support\Facades\Storage;
 
-trait SaveImage
+trait SaveImagesTrait
 {
 
 
