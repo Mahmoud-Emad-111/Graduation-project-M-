@@ -53,7 +53,7 @@ Route::controller(LabCategoryController::class)->prefix('/Labs_Categories/')->gr
 
 Route::controller(LabController::class)->prefix('/Lab/')->group(function () {
     Route::post('Store','Store');
-    Route::get('Get','Get');
+    Route::get('Get','Get_All_Categories');
     Route::post('Show','Show');
     Route::post('Update','Update');
     Route::post('Delete','Delete');
