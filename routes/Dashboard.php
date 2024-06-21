@@ -4,6 +4,7 @@ use App\Http\Controllers\DoctorCategoryController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\LabCategoryController;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\PhysiotherapyCentreController;
 use App\Http\Controllers\UserController;
 use App\Models\Doctor_Category;
 use Illuminate\Http\Request;
@@ -54,6 +55,14 @@ Route::controller(LabCategoryController::class)->prefix('/Labs_Categories/')->gr
 Route::controller(LabController::class)->prefix('/Lab/')->group(function () {
     Route::post('Store','Store');
     Route::get('Get','Get_All_Categories');
+    Route::post('Show','Show');
+    Route::post('Update','Update');
+    Route::post('Delete','Delete');
+});
+
+Route::controller(PhysiotherapyCentreController::class)->prefix('/PhysiotherapyCentre/')->group(function () {
+    Route::post('Store','Store');
+    Route::get('Get','Get');
     Route::post('Show','Show');
     Route::post('Update','Update');
     Route::post('Delete','Delete');
